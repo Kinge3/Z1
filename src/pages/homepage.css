@@ -1,0 +1,29 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height of the viewport */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box; /* To ensure padding doesn't affect the height */
+    background-color: black; /* Set background color to black */
+    color: white; /* Set text color to white for better visibility */
+}
+
+.centered-button {
+    font-size: 20px;
+    padding: 15px 30px;
+    cursor: pointer;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease;
+}
+
+.centered-button:hover {
+    background-color: darkorange;
+}
