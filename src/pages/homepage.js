@@ -23,7 +23,7 @@ function HomePage() {
 
     return (
         <div className="home">
-            <h1>Welcome to Kinge3</h1>
+            <h1>Welcome to Z1</h1>
             <p>This is the homepage, well the first draft.</p>
             <button className="centered-button" onClick={connectWalletHandler}>
                 {account ? `Connected: ${account}` : 'Connect with MetaMask'}
