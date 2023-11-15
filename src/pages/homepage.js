@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Web3 from 'web3';
 import './homepage.css';
+import SideBox from './side-box.js'; 
 
 function HomePage() {
     const [account, setAccount] = useState('');
@@ -48,6 +48,7 @@ function HomePage() {
             <button className="centered-button" onClick={connectWalletHandler}>
                 {account ? `Connected: ${account}` : 'Connect with MetaMask'}
             </button>
+            <SideBox /> 
         </div>
     );
 }
