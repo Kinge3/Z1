@@ -9,12 +9,32 @@ function HomePage() {
         if (window.ethereum && window.ethereum.isMetaMask) {
             console.log('MetaMask Here!');
 
+            // Define the custom network details
+            const customNetwork = {
+                chainId: '0x1B59', // The chainId must be in hexadecimal format
+                chainName: 'ZetaChain Athens 3 Testnet',
+                nativeCurrency: {
+                    name: 'AZETA',
+                    symbol: 'aZETA', // 2-6 characters
+                    decimals: 18,
+                },
+                rpcUrls: ['https://zetachain-athens-evm.blockpi.network/v1/rpc/public'],
+                blockExplorerUrls: ['https://explorer.zetachain.com/'],
+            };
+
             try {
+                // Request to add or switch to the custom network
+                await window.ethereum.request({
+                    method: 'wallet_addEthereumChain',
+                    params: [customNetwork],
+                });
+
+                // Continue with connecting the account
                 const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
                 console.log(accounts);
                 setAccount(accounts[0]);
             } catch (error) {
-                console.log('Error connecting to metamask', error);
+                console.log('Error connecting to custom network or MetaMask', error);
             }
         } else {
             console.log('Need to install MetaMask');
