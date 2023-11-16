@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './homepage.css';
 import SideBox from './side-box.js'; 
+import './homepage.css';
 
 function HomePage() {
     const [account, setAccount] = useState('');
@@ -9,16 +9,15 @@ function HomePage() {
         if (window.ethereum && window.ethereum.isMetaMask) {
             console.log('MetaMask Here!');
 
-            // Define the custom network details
             const customNetwork = {
                 chainId: '0x1B59', // The chainId must be in hexadecimal format
                 chainName: 'ZetaChain Athens 3 Testnet',
                 nativeCurrency: {
                     name: 'AZETA',
-                    symbol: 'aZETA', // 2-6 characters
+                    symbol: 'aZETA', // 2-6 characters long
                     decimals: 18,
                 },
-                rpcUrls: ['https://zetachain-athens-evm.blockpi.network/v1/rpc/public'],
+                rpcUrls: ['https://rpc.ankr.com/zetachain_evm_athens_testnet'],
                 blockExplorerUrls: ['https://explorer.zetachain.com/'],
             };
 
@@ -48,7 +47,7 @@ function HomePage() {
             <button className="centered-button" onClick={connectWalletHandler}>
                 {account ? `Connected: ${account}` : 'Connect with MetaMask'}
             </button>
-            <SideBox /> 
+            <SideBox account={account} />
         </div>
     );
 }
