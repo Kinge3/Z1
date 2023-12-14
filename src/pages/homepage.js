@@ -1,9 +1,48 @@
+// HomePage.js
 import React, { useState } from 'react';
-import SideBox from './side-box.js'; 
+import SideBox from './side-box';
+import CurrencyGraph from './currencyGraph';
 import './homepage.css';
 
-function HomePage() {
+const HomePage = () => {
     const [account, setAccount] = useState('');
+    const [selectedTimeFrame, setSelectedTimeFrame] = useState('1D'); // Add this line for state
+
+
+    const generateRandomData = (numPoints) => {
+        return Array.from({ length: numPoints }, () => Math.random() * 2 + 1);
+    };
+
+    const currencyData = {
+        name: 'aZETA',
+        value: Math.random() * 10 + 1,
+        chartData: {
+            labels: Array.from({ length: 7 }, (_, i) => `Day ${i + 1}`),
+            datasets: [{
+                label: 'Currency Value',
+                data: generateRandomData(7),
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1,
+            }],
+        },
+    };
+
+    const buyTokens = async () => {
+        console.log('Buying tokens...');
+        // Implement your buyTokens logic
+    };
+
+    const sellTokens = async () => {
+        console.log('Selling tokens...');
+        // Implement your sellTokens logic
+    };
+
+    const handleTimeFrameChange = (timeFrame) => {
+        console.log(`Selected time frame: ${timeFrame}`);
+        setSelectedTimeFrame(timeFrame);
+        // Implement your handleTimeFrameChange logic
+    };
 
     const connectWalletHandler = async () => {
         if (window.ethereum && window.ethereum.isMetaMask) {
@@ -43,13 +82,19 @@ function HomePage() {
     return (
         <div className="home">
             <h1>Welcome to Z1</h1>
-            <p>This is the homepage, well the first draft.</p>
+            <p>This is the homepage, well, the first draft.</p>
             <button className="centered-button" onClick={connectWalletHandler}>
                 {account ? `Connected: ${account}` : 'Connect with MetaMask'}
             </button>
-            <SideBox account={account} />
+            <SideBox
+                account={account}
+                currencyData={currencyData}
+                buyTokens={buyTokens}
+                sellTokens={sellTokens}
+                handleTimeFrameChange={handleTimeFrameChange}
+            />
         </div>
     );
-}
+};
 
 export default HomePage;

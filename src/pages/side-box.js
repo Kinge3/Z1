@@ -1,32 +1,24 @@
 import React from 'react';
+import CurrencyGraph from './currencyGraph';
 import './side-box.css';
 
-const SideBox = ({ account }) => {
-    // Replace these functions with actual smart contract interactions
-    const buyTokens = async () => {
-        if (!account) {
-            alert('Please connect to MetaMask first.');
-            return;
-        }
-        console.log('Buying tokens...');
-        // Here you would put your contract interaction logic
-    };
-
-    const sellTokens = async () => {
-        if (!account) {
-            alert('Please connect to MetaMask first.');
-            return;
-        }
-        console.log('Selling tokens...');
-        // Here you would put your contract interaction logic
-    };
-
+const SideBox = ({ account, currencyData, buyTokens, sellTokens, handleTimeFrameChange }) => {
     return (
-        <div className="side-box">
+        <div className="side-bar">
             <h2>Zeta Tokens</h2>
             <div className="currency-select">
-                <span>aZETA</span>
+                <span>{currencyData.name}</span>
                 <button>MAX</button>
+            </div>
+            <CurrencyGraph chartData={currencyData} />
+            <div className="time-frame-buttons">
+                <button onClick={() => handleTimeFrameChange('1D')}>1 Day</button>
+                <button onClick={() => handleTimeFrameChange('1W')}>1 Week</button>
+                <button onClick={() => handleTimeFrameChange('1M')}>1 Month</button>
+                <button onClick={() => handleTimeFrameChange('3M')}>3 Months</button>
+            </div>
+            <div className="currency-info">
+                <p>Value: ${currencyData.value.toFixed(2)}</p>
             </div>
             <div className="actions">
                 <button className="buy" onClick={buyTokens}>Buy</button>
@@ -56,6 +48,6 @@ const SideBox = ({ account }) => {
             </div>
         </div>
     );
-}
+};
 
 export default SideBox;
