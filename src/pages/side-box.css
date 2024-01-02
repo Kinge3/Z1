@@ -1,12 +1,45 @@
 .side-box {
+    display: flex;
+    background-color: black;
     border: 1px solid #e6e6e6;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px;
-    width: 300px; /* Adjust as per your design requirements */
-    background-color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    width: 1400px;
+    margin: 40px;
+}
+
+.currencyGraph .time-frame-buttons {
+    margin-top: 10px;
+}
+  
+.currencyGraph .time-frame-buttons button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.currencyGraph .time-frame-buttons button:hover {
+    background-color: #2980b9;
+}
+
+.currencyGraph {
+    width: 100%;
+}
+
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #282c34;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .currency-select {
@@ -14,23 +47,29 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    padding: 10px;
-    background-color: black;
+    padding: 15px;
+    background-color: #343a40;
     border-radius: 8px;
 }
 
 .currency-select span {
     font-weight: bold;
+    color: white;
 }
 
 .currency-select button {
-    padding: 5px 15px;
+    padding: 8px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
     background-color: #007bff;
     color: white;
+    transition: background-color 0.3s;
+}
+
+.currency-select button:hover {
+    background-color: #0056b3;
 }
 
 .actions {
@@ -40,7 +79,7 @@
 }
 
 .actions button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -70,26 +109,27 @@
 .prediction {
     font-style: italic;
     margin-bottom: 15px;
-    color: white;
+    color: #fff;
 }
 
 .warning {
     padding: 15px;
-    background-color: #fff3cd;
+    background-color: #ffe3e3;
     border-radius: 8px;
-    border-left: 5px solid #ffeeba;
+    border-left: 5px solid #d9534f;
     margin-bottom: 15px;
-    color: #856404;
+    color: #d9534f;
 }
 
 .warning strong {
     display: block;
     margin-bottom: 5px;
+    color: #d9534f;
 }
 
 .preview button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 4px;
     background-color: #17a2b8;
@@ -103,19 +143,19 @@
 }
 
 .details {
-    border-top: 1px solid #e6e6e6;
+    border-top: 1px solid #495057;
     padding-top: 10px;
 }
 
 .detail {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 14px;
 }
 
 .detail span {
-    color: white;
+    color: #ced4da;
 }
 
 /* You might need to add media queries to adjust the layout on smaller screens */
