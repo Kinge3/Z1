@@ -1,17 +1,15 @@
 .side-box {
     display: flex;
     background-color: black;
-    border: 1px solid #e6e6e6;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
-    width: 1400px;
+    width: 1700px;
     margin: 40px;
 }
 
-.currencyGraph .time-frame-buttons {
-    margin-top: 10px;
+.currencyGraph {
+    width: 100%;
 }
   
 .currencyGraph .time-frame-buttons button {

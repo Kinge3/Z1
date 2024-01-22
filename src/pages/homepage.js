@@ -8,7 +8,6 @@ const HomePage = () => {
     const [account, setAccount] = useState('');
     const [selectedTimeFrame, setSelectedTimeFrame] = useState('1D'); // Add this line for state
 
-
     const generateRandomData = (numPoints) => {
         return Array.from({ length: numPoints }, () => Math.random() * 2 + 1);
     };
@@ -81,9 +80,7 @@ const HomePage = () => {
 
     return (
         <div className="home">
-            <h1>Welcome to Z1</h1>
-            <p>This is the homepage, well, the first draft.</p>
-            <button className="centered-button" onClick={connectWalletHandler}>
+            <button className="connect-button" onClick={connectWalletHandler}>
                 {account ? `Connected: ${account}` : 'Connect with MetaMask'}
             </button>
             <SideBox
