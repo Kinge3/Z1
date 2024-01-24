@@ -4,14 +4,28 @@
     align-items: flex-end;
     justify-content: center;
     height: 100vh;
-    padding: 50px;
+    padding: 48px;
     box-sizing: border-box;
-    background-color: black;
+    background-color: #1c1e22;
     color: white;
 }
 
+.header {
+    display: flex;
+    color: white;
+    align-items: center;
+    margin-bottom: 0px;
+    margin-right: 1600px;
+}
+
+.zetachain-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
 .connect-button {
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px 20px;
     cursor: pointer;
     background-color: orange;
@@ -20,8 +34,8 @@
     color: white;
     font-weight: bold;
     position: absolute;
-    top: 890px;
-    right: 108px;
+    top: 33px;
+    right: 110px;
     transition: background-color 0.3s ease;
 }
 
@@ -37,4 +51,19 @@
     align-items: center;
 }
 
-/* Add any additional styles for SideBox and CurrencyGraph components */
+@media (max-width: 768px) {
+    .home {
+        align-items: center; /* Center content on smaller screens */
+        padding: 16px; /* Adjust padding for smaller screens */
+    }
+
+    .header {
+        margin-right: 16px; /* Adjust margin for smaller screens */
+    }
+
+    .connect-button {
+        top: 0px;
+        right: 0px;
+        position: relative; /* Change to fixed for better mobile experience */
+    }
+}

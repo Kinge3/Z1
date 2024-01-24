@@ -80,6 +80,9 @@ const HomePage = () => {
 
     return (
         <div className="home">
+            <div className="header">
+                <h1>ZETACHAIN</h1>
+            </div>
             <button className="connect-button" onClick={connectWalletHandler}>
                 {account ? `Connected: ${account}` : 'Connect with MetaMask'}
             </button>

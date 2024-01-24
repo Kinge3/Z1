@@ -160,26 +160,25 @@ const SideBox = ({ account, currencyData, handleTimeFrameChange }) => {
                   <button className="buy" onClick={buyTokens}>Purchase</button>
                   <button className="short" onClick={sellTokens}>Short Sell</button>
               </div>
-              <p className="prediction">I have a feeling... well, who knows?</p>
               <div className="warning">
-                  <strong>Unable to initiate new V2 Positions</strong>
-                  <p>Please close any existing V2 positions as we get ready to launch V3</p>
+                  <strong>Funding Rate (1D): +0.0068%</strong>
+                  <p>The funding rate determines whether you lose or gain funding on an open position.</p>
               </div>
               <div className="preview">
                   <button>Preview</button>
               </div>
               <div className="details">
                   <div className="detail">
-                      <span>Initial Funding Rate</span>
-                      <span>--</span>
+                      <span>Total Shareholders</span>
+                      <span>587,695</span>
                   </div>
                   <div className="detail">
                       <span>Conversion Rate</span>
                       <span>1.044</span>
                   </div>
                   <div className="detail">
-                      <span>Estimated Total Fees</span>
-                      <span>--</span>
+                      <span>Estimated Gas</span>
+                      <span>0.054 aZETA</span>
                   </div>
               </div>
           </div>

@@ -4,28 +4,43 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
+    height: 100%;
     width: 1700px;
     margin: 40px;
+    border-radius: 10px; /* Add border-radius for rounded corners */
 }
 
+
 .currencyGraph {
+    position: relative;
     width: 100%;
+    height: 90%;
+    margin-bottom: 20px; /* Add some margin to move the graph down */
+}
+
+.currencyGraph .time-frame-buttons {
+    margin-top: 30px; /* Add some margin to move the buttons down */
 }
 
 .currencyGraph .time-frame-buttons button {
-    background-color: #004B39;
+    background-color: #1E90FF;
     color: #fff;
     border: none;
-    padding: 8px 16px;
+    padding: 12px 24px;
     margin-right: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .currencyGraph .time-frame-buttons button:hover {
-    background-color: #00523E;
+    background-color: #0066CC;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
 
+/* Styling for .content */
 .content {
     padding: 20px;
     flex-grow: 1;
@@ -36,34 +51,44 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Styling for .currency-select */
 .currency-select {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
     padding: 15px;
-    background-color: #0D0E0E;
+    background-color: #2D3B4D; /* Bold background color */
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker box shadow */
 }
 
 .currency-select span {
     font-weight: bold;
-    color: #79A599;
+    color: #FFD700; /* Bold golden color for the span */
 }
 
 .currency-select button {
-    padding: 8px 15px;
+    padding: 12px 24px; /* Larger padding for buttons */
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; /* Rounder corners for buttons */
     cursor: pointer;
     font-weight: bold;
-    background-color: #004B39;
+    background-color: #1E90FF; /* Bold blue button color */
     color: #fff;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s; /* Add a transition for button transform */
 }
 
 .currency-select button:hover {
-    background-color: #00523E;
+    background-color: #0066CC; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.currency-info {
+    font-family: 'Arial', sans-serif; /* Change to your desired font-family */
+    font-size: 20px;
+    font-weight: bold; /* Make the font bold */
+    color: #ccf92a; /* A bold color (e.g., dark orange) */
 }
 
 .actions {
@@ -111,7 +136,8 @@
     background-color: #728D64;
     border-radius: 8px;
     border-left: 5px solid #004B39;
-    margin-bottom: 15px;
+    margin-top: 40px;
+    margin-bottom: 30px;
     color: #004B39;
 }
 
@@ -125,6 +151,7 @@
     width: 100%;
     padding: 12px;
     border: none;
+    margin-bottom: 30px;
     border-radius: 4px;
     background-color: #00523E;
     color: #fff;
@@ -155,7 +182,30 @@
 /* You might need to add media queries to adjust the layout on smaller screens */
 @media (max-width: 768px) {
     .side-box {
+        flex-direction: column; /* Stack items vertically */
         width: 100%; /* Full width on smaller screens */
         margin: 10px 0; /* Adjust margins for stacked layout */
+    }
+
+    .currencyGraph {
+        height: auto; /* Allow the graph to take its natural height */
+    }
+
+    .time-frame-buttons {
+        margin-top: 50px; /* Increase margin for smaller screens */
+        overflow-x: auto; /* Add horizontal scroll for smaller screens if needed */
+    }
+
+    .time-frame-buttons button {
+        margin-right: 10px; /* Add space between buttons */
+    }
+
+    /* Additional styles to prevent white background on scrolling */
+    body {
+        overflow-x: hidden; /* Hide horizontal scrollbar on body */
+    }
+
+    html {
+        overflow-x: hidden; /* Hide horizontal scrollbar on html */
     }
 }

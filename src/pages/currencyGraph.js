@@ -8,6 +8,9 @@ import 'chartjs-adapter-date-fns';
 Chart.register(CategoryScale, LinearScale, LineController, PointElement, LineElement);
 
 const CurrencyGraph = ({ chartData, handleTimeFrameChange }) => {
+    // Set the color within the chartData object
+    chartData.chartData.datasets[0].borderColor = 'white';
+
     return (
         <div className="currency-info">
             <p>Value: ${chartData.value.toFixed(2)}</p>
